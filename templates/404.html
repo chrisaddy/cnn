@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% block title %}Page Not Found{% endblock %}
 {% block body %}
+
+<div class="container center-block content section">
   <h1>This Note Has Yet to Be Written</h1>
-  <p>Come back soon and hopefully it'll be up. In the meantime, head back to the <a href="{{ url_for('index') }}">notebook</a>.
+  <p>Come back soon and hopefully it'll be up.</p>
+  <p>In the meantime, head back to the <a href="{{ url_for('index') }}">notebook</a>.</p>
+</div>
 {% endblock %}
