@@ -3,6 +3,7 @@ from flask_bootstrap import Bootstrap
 from flaskext.markdown import Markdown
 from flask_nav import Nav
 from flask_nav.elements import Navbar, View
+import os
 
 
 
@@ -35,4 +36,5 @@ def navbar():
 nav.init_app(app)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0')
+	port = int(os.environ.get('PORT', 5000))
+	app.run(host='0.0.0.0', port=port, debug=True, use_reloader=True)
