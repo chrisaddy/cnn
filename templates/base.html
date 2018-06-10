@@ -1,0 +1,36 @@
+{%- extends "bootstrap/base.html" %} 
+{% block title %}Convoluted Notebook Network{% endblock %} 
+{% import "bootstrap/fixes.html" as fixes %} 
+{% block head %} 
+{{super()}} 
+{{fixes.ie8()}} 
+{%- endblock %}
+
+{% block styles %}
+{{super()}}
+<link rel="stylesheet"
+      href="{{url_for('.static', filename='mystyle.css')}}">
+{% endblock %}
+
+
+{% block scripts %}
+{{super()}}
+	<script type="text/x-mathjax-config">
+	  MathJax.Hub.Config({
+	    extensions: ["tex2jax.js"],
+	    jax: ["input/TeX", "output/HTML-CSS"],
+	    tex2jax: {
+	      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+	      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+	      processEscapes: true
+	    },
+	    "HTML-CSS": { fonts: ["TeX"] }
+	  });
+	</script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js"></script>
+{%- endblock %}
+
+{% import "bootstrap/utils.html" as utils %} 
+{% block navbar %} 
+{{nav.navbar.render()}} 
+{% endblock %}
