@@ -1,30 +1,32 @@
 from flask import Flask, render_template
 from flask_bootstrap import Bootstrap
-from flaskext.markdown import Markdown
 from flask_nav import Nav
 from flask_nav.elements import Navbar, View
 import os
 
-
-
 app = Flask(__name__)
 Bootstrap(app)
-Markdown(app)
 
 nav = Nav()
+
+### route home page
 
 @app.route("/")
 def index():
 	return render_template('index.html')
 
+### route about page
+
 @app.route("/about")
 def about():
 	return render_template('about.html')
 
-@app.route("/hadamard_product")
-def hadamard():
-	return render_template('linear_algebra/hadamard_product.html')
+### route everything else
+@app.route('/<path:path>')
+def static_file(path):
+	return render_template('%s.html' % path)
 
+### navigation
 @nav.navigation()
 def navbar():
 	return Navbar(
