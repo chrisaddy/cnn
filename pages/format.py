@@ -18,11 +18,16 @@ def base(base_file):
 	print('{%- extends "' + base_file + '" %}')
 
 def start_content():
-	print('{% block content %}<div class="container">')
+	print('{% block content %}<div class="container center-block content section">')
 
 def end_content():
 	print('</div>{%- endblock %}')
 
+def start_div(classes = '', ids = ''):
+	print('<div class="' + classes + '" id="' + ids + '">')
+
+def end_div():
+	print('</div>')
 ### headlines
 
 def headline(level = '1', content = '', classes = '', ids = ''):
@@ -79,6 +84,16 @@ def code(expression, classes = '', ids = ''):
 
 	print(open_tag + expression + close_tag)
 
+### lists
+
+def start_ul(classes='', ids=''):
+	print('<ul class="' + classes + '" id="' + ids + '">')
+
+def end_ul():
+	print('</ul>')
+
+def li(content='', classes='', ids=''):
+	print('<li class="' + classes + '" id="' + ids + '">' + content + '</li>')
 
 ### hyperlinks
 
@@ -89,6 +104,11 @@ def link(content, href = '#', local = True):
 		url = href
 
 	return '<a href="' + url + '">' + content + '</a>'
+
+def youtube(source = '', width='560', height='315'):
+	div = '<div class="embed-responsive embed-responsive-16by9">'
+	iframe = '<iframe width="' + width + '" height="' + height + '" src="' + source + '"></iframe>'
+	print(div + iframe + '</div>')
 
 if __name__ == '__main__':
     main()

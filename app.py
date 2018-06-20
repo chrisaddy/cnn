@@ -25,6 +25,12 @@ def index():
 def about():
 	return render_template('about.html')
 
+### missing pages, content needed
+
+@app.route("/missing")
+def missing():
+	return render_template('missing_pages.html')
+
 ### route everything else
 @app.route('/<path:path>')
 def static_file(path):
@@ -36,7 +42,8 @@ def navbar():
 	return Navbar(
 		'Convoluted Notebook Network',
 		View('Home', 'index'),
-		View('About', 'about')
+		View('About', 'about'),
+		View('Content Needed', 'missing')
 	)
 
 nav.init_app(app)
