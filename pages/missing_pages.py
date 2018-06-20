@@ -64,8 +64,6 @@ casella_berger = [
 ]
 
 schaums_set_theory = [
-	'defined sets',
-	'set-builder form or property method',
 	'solution set',
 	'properties of sets',
 	'proper subset',

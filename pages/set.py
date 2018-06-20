@@ -39,7 +39,28 @@ $$
 	B = \\left\\{1, 3, 5, 7, 9\\right\\}.
 $$
 
-This notation is referred to as <em>tabular form</em>.
+This notation is referred to as <em>tabular form</em>. For sets that are hard to specify explicitly, we often
+use <em>set-builder form</em>. For example, the set $A$ that contains all values of $x$ in the real numbers whose square root is greater than 10 as
+
+$$
+	A = \\left\\{x: x \\in \mathbb{R}, \\sqrt{x} > 10\\right\\}
+$$
+"""
+)
+
+p(
+"""
+If an element $a$ belongs to a set $A$ we denote this as
+
+$$
+	a \\in A.
+$$
+
+However, if the object $b$ is not an element of $A$, we denote this as
+
+$$
+	b \\not\\in A.
+$$
 """
 )
 
@@ -51,18 +72,39 @@ There are a few sets that are used often enough that they have their own notatio
 
 $$
 \\begin{align}
-	\\mathbb{N} &= \\left\\{0, 1, 2, 3, ...\\right\\} &  \\text{Natural Numbers} \\\\
-	\\mathbb{P} &= \\left\\{1, 2, 3, 4, ...\\right\\} & \\text{Positive Integers} \\\\	
-	\\mathbb{Z} &= \\left\\{..., -3, -2, -1, 0, 1, 2, 3, ...\\right\\} & \\text{Integers} \\\\
+	\\mathbb{N} &= \\left\\{0, 1, 2, 3, ...\\right\\}\\\\
+	\\mathbb{P} &= \\left\\{1, 2, 3, 4, ...\\right\\}\\\\
+	\\mathbb{Z} &= \\left\\{..., -3, -2, -1, 0, 1, 2, 3, ...\\right\\}\\\\
 	\\mathbb{Q} &= \\text{The rational numbers.} \\\\
 	\\mathbb{R} &= \\text{The real numbers.} \\\\
 	\\mathbb{C} &= \\text{The complex numbers.} \\\\
 	\\textbf{U} &= \\text{The universal set.} \\\\
-	\\emptyset &= \\left\\{\\right\\} & \\text{The null or empty set.}
+	\\emptyset &= \\left\\{\\right\\}
 \\end{align}
 $$
 """
 )
+
+p(
+"""
+Above, we can define the natural numbers, positive integers, integers, and the null set ($\\mathbb{N}$, $\\mathbb{P}$, $\\mathbb{Z}$, and $\\emptyset$, respectively),
+by listing the elements belonging to those sets. These sets are specified or <em>defined</em>.
+"""
+)
+
+p(
+"""
+The <em>universal set</em> $\\textbf{U}$ is the set within which all sets belong. See Russell's Paradox.
+"""
+)
+
+p(
+"""
+The null set $\\emptyset$ is the set with no elements. There is only one empty set.
+"""
+)
+
+
 
 h3('Set Equality')
 
@@ -98,7 +140,7 @@ $$
 
 h4('Other properties of subsets')
 
-p('Consider any sets $A$ and $B$.')
+p('Consider any sets $A$, $B$, and $C$.')
 
 p(
 """
@@ -125,12 +167,10 @@ p(
 If $A$ is a subset of $B$ and $B$ is a subset of $C$
 
 $$
-	A \\subseteq B \\subseteq C \\implies A \\subseteq C
+	A \\subseteq B \\subseteq C \\Rightarrow A \\subseteq C
 $$
 """
 )
 
-p(
 
-)
 end_content()
